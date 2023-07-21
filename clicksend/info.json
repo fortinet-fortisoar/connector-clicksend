@@ -316,7 +316,7 @@
           "visible": true,
           "editable": true,
           "required": false,
-          "tooltip": "When the message should be sent. Leave blank for immediate delivery.",
+          "tooltip": "Specify the date and time when the message should be sent. Leave blank for immediate delivery.",
           "description": "Specify the date and time when the message should be sent. Leave blank for immediate delivery."
         },
         {
