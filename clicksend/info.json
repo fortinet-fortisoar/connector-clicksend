@@ -1,15 +1,15 @@
 {
   "name": "clicksend",
   "label": "ClickSend",
-  "description": "Sends SMS messages through the ClickSend",
-  "publisher": "CyberSponse Community",
-  "cs_approved": false,
+  "description": "ClickSend is business communications software enabling companies of all shapes and sizes to easily send and receive SMS, Voice API.",
+  "publisher": "Fortinet",
+  "cs_approved": true,
   "cs_compatible": true,
-  "version": "1.0.0",
-  "category": "Generic",
+  "version": "2.0.0",
+  "category": "Communication and Coordination",
   "icon_small_name": "ClickSend_32X32.png",
   "icon_large_name": "ClickSend_80X80.png",
-  "help_online": "https://help.cybersponse.com/support/solutions/articles/17000074824-clicksend-v1-0-0",
+  "help_online": "",
   "configuration": {
     "fields": [
       {
@@ -54,7 +54,7 @@
   "operations": [
     {
       "operation": "send_message",
-      "category": "miscellaneous",
+      "category": "investigation",
       "annotation": "send_message",
       "output_schema": {
         "http_code": "",
@@ -64,7 +64,35 @@
           "total_price": "",
           "total_count": "",
           "queued_count": "",
-          "messages": []
+          "messages": [
+            {
+              "direction": "",
+              "date": "",
+              "to": "",
+              "body": "",
+              "from": "",
+              "schedule": "",
+              "message_id": "",
+              "message_parts": "",
+              "message_price": "",
+              "from_email": "",
+              "list_id": "",
+              "custom_string": "",
+              "contact_id": "",
+              "user_id": "",
+              "subaccount_id": "",
+              "is_shared_system_number": "",
+              "country": "",
+              "carrier": "",
+              "status": ""
+            }
+          ],
+          "_currency": {
+            "currency_name_short": "",
+            "currency_prefix_d": "",
+            "currency_prefix_c": "",
+            "currency_name_long": ""
+          }
         }
       },
       "title": "Send Message",
@@ -72,24 +100,34 @@
       "enabled": true,
       "parameters": [
         {
-          "title": "To",
-          "name": "to",
-          "type": "phone",
+          "title": "Message",
+          "name": "body",
+          "type": "textarea",
           "visible": true,
           "editable": true,
           "required": true,
+          "tooltip": "Specify the body of the message to be sent",
+          "description": "Specify the body of the message to be sent"
+        },
+        {
+          "title": "To",
+          "name": "to",
+          "type": "text",
+          "visible": true,
+          "editable": true,
+          "required": false,
           "tooltip": "Recipient's phone number",
           "description": "Specify the phone number of recipient."
         },
         {
           "title": "From",
           "name": "from",
-          "type": "phone",
+          "type": "text",
           "visible": true,
           "editable": true,
           "required": false,
-          "tooltip": "Senders phoner number",
-          "description": "Specify the phone number of sender."
+          "tooltip": "Specify the sender ID that shows on the recipients phone when they receive the SMS.",
+          "description": "Specify the sender ID that shows on the recipients phone when they receive the SMS."
         },
         {
           "title": "Schedule",
@@ -98,18 +136,250 @@
           "visible": true,
           "editable": true,
           "required": false,
-          "tooltip": "When the message should be sent",
-          "description": "Specify the date and time when the message should be sent."
+          "tooltip": "When the message should be sent. Leave blank for immediate delivery.",
+          "description": "Specify the date and time when the message should be sent. Leave blank for immediate delivery."
         },
         {
+          "title": "Custom String",
+          "name": "custom_string",
+          "type": "text",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "tooltip": "Specify your reference. It will be passed back with all replies and delivery reports.",
+          "description": "Specify your reference. It will be passed back with all replies and delivery reports."
+        },
+        {
+          "title": "Country",
+          "name": "country",
+          "type": "text",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "tooltip": "Specify ISO alpha-2 character country code e.g. 'US', to format the recipient number if it's not in international format.",
+          "description": "Specify ISO alpha-2 character country code e.g. 'US', to format the recipient number if it's not in international format."
+        },
+        {
+          "title": "List ID",
+          "name": "list_id",
+          "type": "integer",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "tooltip": "Specify the list ID if sending to a whole list. Can be used instead of 'to' you can get the list ID from Get Contact List action.",
+          "description": "Specify the list ID if sending to a whole list. Can be used instead of 'to' you can get the list ID from Get Contact List action.."
+        },
+        {
+          "title": "Email",
+          "name": "from_email",
+          "type": "text",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "tooltip": "Specify email address where the reply should be emailed to. If omitted, the reply will be emailed back to the user who sent the outgoing SMS.",
+          "description": "Specify email address where the reply should be emailed to. If omitted, the reply will be emailed back to the user who sent the outgoing SMS."
+        }
+      ]
+    },
+    {
+      "operation": "get_contact_list",
+      "category": "investigation",
+      "annotation": "get_contact_list",
+      "output_schema": {
+        "http_code": "",
+        "response_code": "",
+        "response_msg": "",
+        "data": {
+          "total": "",
+          "per_page": "",
+          "current_page": "",
+          "last_page": "",
+          "next_page_url": "",
+          "prev_page_url": "",
+          "from": "",
+          "to": "",
+          "data": [
+            {
+              "list_id": "",
+              "list_name": "",
+              "list_email_id": "",
+              "_contacts_count": "",
+              "_import_in_progress": "",
+              "_optout_in_progress": ""
+            }
+          ]
+        }
+      },
+      "title": "Get Contact List",
+      "description": "Get all contact lists form your ClickSend Account",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Page",
+          "name": "page",
+          "type": "integer",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "tooltip": "Specify the page number to return in the response.",
+          "description": "Specify the page number to return in the response."
+        },
+        {
+          "title": "Limit",
+          "name": "limit",
+          "type": "integer",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "tooltip": "Specify the number of results per page to return. Min 15, Max 100",
+          "description": "Specify the number of results per page to return. Min 15, Max 100"
+        }
+      ]
+    },
+    {
+      "operation": "send_voice_message",
+      "category": "investigation",
+      "annotation": "send_voice_message",
+      "output_schema": {
+        "http_code": "",
+        "response_code": "",
+        "response_msg": "",
+        "data": {
+          "total_price": "",
+          "total_count": "",
+          "queued_count": "",
+          "messages": [
+            {
+              "list_id": "",
+              "message_id": "",
+              "to": "",
+              "voice": "",
+              "lang": "",
+              "body": "",
+              "require_input": "",
+              "machine_detection": "",
+              "status": ""
+            }
+          ],
+          "_currency": {
+            "currency_name_short": "",
+            "currency_prefix_d": "",
+            "currency_prefix_c": "",
+            "currency_name_long": "",
+            "min_recharge_amount": "",
+            "max_recharge_amount": ""
+          }
+        }
+      },
+      "title": "Send Voice Message",
+      "description": "Send TTS (Text-to-speech) voice calls",
+      "enabled": true,
+      "parameters": [
+        {
           "title": "Message",
-          "name": "message",
+          "name": "body",
           "type": "textarea",
           "visible": true,
           "editable": true,
           "required": true,
-          "tooltip": "Body of the message to be sent",
-          "description": "Body of the message to be sent"
+          "tooltip": "Specify the body of the message to be sent",
+          "description": "Specify the body of the message to be sent"
+        },
+        {
+          "title": "Voice",
+          "name": "voice",
+          "type": "select",
+          "visible": true,
+          "editable": true,
+          "required": true,
+          "tooltip": "Specify 'female' or 'male'.",
+          "description": "Specify 'female' or 'male'.",
+          "options": [
+            "male",
+            "female"
+          ]
+        },
+        {
+          "title": "to",
+          "name": "to",
+          "type": "text",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "tooltip": "Specify the phone number in E.164 format.",
+          "description": "Specify the phone number in E.164 format."
+        },
+        {
+          "title": "Schedule",
+          "name": "schedule",
+          "type": "datetime",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "tooltip": "When the message should be sent. Leave blank for immediate delivery.",
+          "description": "Specify the date and time when the message should be sent. Leave blank for immediate delivery."
+        },
+        {
+          "title": "Custom String",
+          "name": "custom_string",
+          "type": "text",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "tooltip": "Specify your reference. It will be passed back with all replies and delivery reports.",
+          "description": "Specify your reference. It will be passed back with all replies and delivery reports."
+        },
+        {
+          "title": "Country",
+          "name": "country",
+          "type": "text",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "tooltip": "Specify ISO alpha-2 character country code e.g. 'US', to format the recipient number if it's not in international format.",
+          "description": "Specify ISO alpha-2 character country code e.g. 'US', to format the recipient number if it's not in international format."
+        },
+        {
+          "title": "List ID",
+          "name": "list_id",
+          "type": "integer",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "tooltip": "Specify the list ID if sending to a whole list. Can be used instead of 'to' you can get the list ID from Get Contact List action.",
+          "description": "Specify the list ID if sending to a whole list. Can be used instead of 'to' you can get the list ID from Get Contact List action.."
+        },
+        {
+          "title": "Language",
+          "name": "lang",
+          "type": "text",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "tooltip": "Specify the language for receiving the voice message.",
+          "description": "Specify the language for receiving the voice message. see Allowed Languages table in https://developers.clicksend.com/docs/rest/v3/#Send-Voice-Message"
+        },
+        {
+          "title": "Require Input",
+          "name": "require_input",
+          "type": "checkbox",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "value": false,
+          "tooltip": "Specify whether to receive a keypress from the recipient. By default this is set to false",
+          "description": "Specify whether to receive a keypress from the recipient. By default this is set to false"
+        },
+        {
+          "title": "Machine Detection",
+          "name": "machine_detection",
+          "type": "checkbox",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "value": false,
+          "tooltip": "Specify whether to detect answering machine or voicemail and leave a message.",
+          "description": "Specify whether to detect answering machine or voicemail and leave a message."
         }
       ]
     }
