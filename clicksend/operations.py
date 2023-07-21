@@ -76,6 +76,7 @@ def get_contact_list(config, params):
 
 def send_voice_message(config, params):
     payload = {"messages": [build_payload(params)]}
+    payload['voice'] = payload['voice'].lower()
     endpoint = "/v3/voice/send"
     return make_api_call(method='POST', endpoint=endpoint, data=json.dumps(payload), config=config)
 
