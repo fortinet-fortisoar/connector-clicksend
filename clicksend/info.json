@@ -1,0 +1,117 @@
+{
+  "name": "clicksend",
+  "label": "ClickSend",
+  "description": "Sends SMS messages through the ClickSend",
+  "publisher": "CyberSponse Community",
+  "cs_approved": false,
+  "cs_compatible": true,
+  "version": "1.0.0",
+  "category": "Generic",
+  "icon_small_name": "ClickSend_32X32.png",
+  "icon_large_name": "ClickSend_80X80.png",
+  "help_online": "https://help.cybersponse.com/support/solutions/articles/17000074824-clicksend-v1-0-0",
+  "configuration": {
+    "fields": [
+      {
+        "title": "Server URL",
+        "required": true,
+        "editable": true,
+        "visible": true,
+        "type": "text",
+        "name": "url",
+        "value": "https://rest.clicksend.com"
+      },
+      {
+        "title": "Username",
+        "required": true,
+        "editable": true,
+        "visible": true,
+        "type": "text",
+        "name": "username",
+        "description": "Username to access ClickSend"
+      },
+      {
+        "title": "Password",
+        "required": true,
+        "editable": true,
+        "visible": true,
+        "type": "password",
+        "name": "password",
+        "description": "Password to access ClickSend"
+      },
+      {
+        "title": "Verify SSL",
+        "required": false,
+        "editable": true,
+        "visible": true,
+        "type": "checkbox",
+        "name": "verify_ssl",
+        "value": true,
+        "description": "Specifies whether the SSL certificate for the server is to be verified or not. By default, this option is set as True"
+      }
+    ]
+  },
+  "operations": [
+    {
+      "operation": "send_message",
+      "category": "miscellaneous",
+      "annotation": "send_message",
+      "output_schema": {
+        "http_code": "",
+        "response_code": "",
+        "response_msg": "",
+        "data": {
+          "total_price": "",
+          "total_count": "",
+          "queued_count": "",
+          "messages": []
+        }
+      },
+      "title": "Send Message",
+      "description": "Send an SMS message to a given number",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "To",
+          "name": "to",
+          "type": "phone",
+          "visible": true,
+          "editable": true,
+          "required": true,
+          "tooltip": "Recipient's phone number",
+          "description": "Specify the phone number of recipient."
+        },
+        {
+          "title": "From",
+          "name": "from",
+          "type": "phone",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "tooltip": "Senders phoner number",
+          "description": "Specify the phone number of sender."
+        },
+        {
+          "title": "Schedule",
+          "name": "schedule",
+          "type": "datetime",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "tooltip": "When the message should be sent",
+          "description": "Specify the date and time when the message should be sent."
+        },
+        {
+          "title": "Message",
+          "name": "message",
+          "type": "textarea",
+          "visible": true,
+          "editable": true,
+          "required": true,
+          "tooltip": "Body of the message to be sent",
+          "description": "Body of the message to be sent"
+        }
+      ]
+    }
+  ]
+}

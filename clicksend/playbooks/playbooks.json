@@ -1,0 +1,91 @@
+{
+  "type": "workflow_collections",
+  "data": [
+    {
+      "@type": "WorkflowCollection",
+      "name": "Sample - Clicksend - 1.0.0",
+      "description": "Sends SMS messages through Clicksend",
+      "visible": true,
+      "image": null,
+      "workflows": [
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Send Message",
+          "description": "Send an SMS message to a given number",
+          "collection": "/api/3/workflow_collections/989fd172-071c-499c-987b-d180df4599e6",
+          "tag": "#ClickSend",
+          "isActive": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/cc63cd0f-fd70-4c86-97e3-5e034ff8e552",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "arguments": [],
+              "status": null,
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62",
+              "uuid": "cc63cd0f-fd70-4c86-97e3-5e034ff8e552"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Send Message",
+              "arguments": {
+                "name": "Clicksend",
+                "params": {
+                  "to": "555-555-5555",
+                  "from": "111-111-1111"
+                },
+                "version": "1.0.0",
+                "connector": "clicksend",
+                "operation": "send_message",
+                "operationTitle": "Send Message",
+                "step_variables": []
+              },
+              "status": null,
+              "left": "135",
+              "top": "145",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "uuid": "467c2dd7-dd20-468e-a7dd-9f3f739a11f5"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Result",
+              "arguments": {
+                "Result": "{{vars.steps.Send_Message.data}}"
+              },
+              "status": null,
+              "left": "467",
+              "top": "161",
+              "stepType": "/api/3/workflow_step_types/04d0cf46-b6a8-42c4-8683-60a7eaa69e8f",
+              "uuid": "e67b6a79-c322-492c-9da1-0da21676e3a4"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "f127e542-c822-4d04-aa0b-6639a54aa285",
+              "name": "Start -> Send Message",
+              "isExecuted": false,
+              "targetStep": "/api/3/workflow_steps/467c2dd7-dd20-468e-a7dd-9f3f739a11f5",
+              "sourceStep": "/api/3/workflow_steps/cc63cd0f-fd70-4c86-97e3-5e034ff8e552"
+            },
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "40a0df06-70a6-41d4-8ed3-5961cc93f167",
+              "name": "Send Message -> Result",
+              "isExecuted": false,
+              "targetStep": "/api/3/workflow_steps/e67b6a79-c322-492c-9da1-0da21676e3a4",
+              "sourceStep": "/api/3/workflow_steps/467c2dd7-dd20-468e-a7dd-9f3f739a11f5"
+            }
+          ],
+          "uuid": "77475c23-18a4-4ef4-a380-9354447d7eb8"
+        }
+      ],
+      "uuid": "989fd172-071c-499c-987b-d180df4599e6"
+    }
+  ]
+}
