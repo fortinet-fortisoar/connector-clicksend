@@ -7,8 +7,8 @@
   - Email
 
 - Added following new operations and respective playbooks
-  - Get Host Details
-  - Get Scan History
+  - Get Contact List
+  - Send Voice Message
 
 #### What's Fixed
 
