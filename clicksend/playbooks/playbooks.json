@@ -2,90 +2,261 @@
   "type": "workflow_collections",
   "data": [
     {
+      "uuid": "6ad39f4f-2a02-4ac8-aefe-a970965c3106",
       "@type": "WorkflowCollection",
-      "name": "Sample - Clicksend - 1.0.0",
-      "description": "Sends SMS messages through Clicksend",
+      "name": "Sample - ClickSend - 2.0.0",
+      "description": "ClickSend is business communications software enabling companies of all shapes and sizes to easily send and receive SMS, Voice API.",
       "visible": true,
       "image": null,
+      "recordTags": [
+        "Clicksend",
+        "clicksend"
+      ],
       "workflows": [
         {
           "@type": "Workflow",
+          "uuid": "209dfa44-0235-4a7c-ab55-c8b56eae8675",
+          "collection": "/api/3/workflow_collections/6ad39f4f-2a02-4ac8-aefe-a970965c3106",
           "triggerLimit": null,
-          "name": "Send Message",
           "description": "Send an SMS message to a given number",
-          "collection": "/api/3/workflow_collections/989fd172-071c-499c-987b-d180df4599e6",
+          "name": "Send Message",
           "tag": "#ClickSend",
+          "recordTags": [
+            "Clicksend",
+            "clicksend"
+          ],
           "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/cc63cd0f-fd70-4c86-97e3-5e034ff8e552",
+          "triggerStep": "/api/3/workflow_steps/df01ccd3-f050-412a-923d-6b9aa802cb90",
           "steps": [
             {
+              "uuid": "df01ccd3-f050-412a-923d-6b9aa802cb90",
               "@type": "WorkflowStep",
               "name": "Start",
-              "arguments": [],
+              "description": null,
               "status": null,
+              "arguments": {
+                "route": "c19febdf-5aee-47b2-bdbd-6f8027cdf8d5",
+                "title": "ClickSend: Send Message",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
               "left": "20",
               "top": "20",
-              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62",
-              "uuid": "cc63cd0f-fd70-4c86-97e3-5e034ff8e552"
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
             },
             {
+              "uuid": "757d805e-c77f-4680-a425-1375ccab11d4",
               "@type": "WorkflowStep",
               "name": "Send Message",
+              "description": null,
+              "status": null,
               "arguments": {
-                "name": "Clicksend",
-                "params": {
-                  "to": "555-555-5555",
-                  "from": "111-111-1111"
-                },
-                "version": "1.0.0",
+                "name": "ClickSend",
+                "config": "''",
+                "params": [],
+                "version": "2.0.0",
                 "connector": "clicksend",
                 "operation": "send_message",
                 "operationTitle": "Send Message",
-                "step_variables": []
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
               },
-              "status": null,
-              "left": "135",
-              "top": "145",
-              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
-              "uuid": "467c2dd7-dd20-468e-a7dd-9f3f739a11f5"
-            },
-            {
-              "@type": "WorkflowStep",
-              "name": "Result",
-              "arguments": {
-                "Result": "{{vars.steps.Send_Message.data}}"
-              },
-              "status": null,
-              "left": "467",
-              "top": "161",
-              "stepType": "/api/3/workflow_step_types/04d0cf46-b6a8-42c4-8683-60a7eaa69e8f",
-              "uuid": "e67b6a79-c322-492c-9da1-0da21676e3a4"
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
             }
           ],
           "routes": [
             {
               "@type": "WorkflowRoute",
-              "uuid": "f127e542-c822-4d04-aa0b-6639a54aa285",
-              "name": "Start -> Send Message",
+              "uuid": "d280d031-e8ae-4c0b-9027-dd177677266f",
+              "label": null,
               "isExecuted": false,
-              "targetStep": "/api/3/workflow_steps/467c2dd7-dd20-468e-a7dd-9f3f739a11f5",
-              "sourceStep": "/api/3/workflow_steps/cc63cd0f-fd70-4c86-97e3-5e034ff8e552"
+              "name": "Start-> Send Message",
+              "sourceStep": "/api/3/workflow_steps/df01ccd3-f050-412a-923d-6b9aa802cb90",
+              "targetStep": "/api/3/workflow_steps/757d805e-c77f-4680-a425-1375ccab11d4"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "a7f4d0d6-ec02-433e-9e97-0a7462426ed0",
+          "collection": "/api/3/workflow_collections/6ad39f4f-2a02-4ac8-aefe-a970965c3106",
+          "triggerLimit": null,
+          "description": "Get all contact lists form your ClickSend Account",
+          "name": "Get Contact List",
+          "tag": "#ClickSend",
+          "recordTags": [
+            "Clicksend",
+            "clicksend"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/49ee8274-7cd2-48b9-a073-221161a443bc",
+          "steps": [
+            {
+              "uuid": "49ee8274-7cd2-48b9-a073-221161a443bc",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "7fe22a26-5f69-4c3d-8924-eb41658ff030",
+                "title": "ClickSend: Get Contact List",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
             },
             {
-              "@type": "WorkflowRoute",
-              "uuid": "40a0df06-70a6-41d4-8ed3-5961cc93f167",
-              "name": "Send Message -> Result",
-              "isExecuted": false,
-              "targetStep": "/api/3/workflow_steps/e67b6a79-c322-492c-9da1-0da21676e3a4",
-              "sourceStep": "/api/3/workflow_steps/467c2dd7-dd20-468e-a7dd-9f3f739a11f5"
+              "uuid": "1edb661a-3b2e-4e46-9a0d-e1904c71580e",
+              "@type": "WorkflowStep",
+              "name": "Get Contact List",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "ClickSend",
+                "config": "''",
+                "params": [],
+                "version": "2.0.0",
+                "connector": "clicksend",
+                "operation": "get_contact_list",
+                "operationTitle": "Get Contact List",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
             }
           ],
-          "uuid": "77475c23-18a4-4ef4-a380-9354447d7eb8"
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "a1956500-c3bf-4cfc-b6a5-745aefa03647",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Contact List",
+              "sourceStep": "/api/3/workflow_steps/49ee8274-7cd2-48b9-a073-221161a443bc",
+              "targetStep": "/api/3/workflow_steps/1edb661a-3b2e-4e46-9a0d-e1904c71580e"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "a866f1a8-f1a5-4bb9-bf7f-c04dacb5b2e5",
+          "collection": "/api/3/workflow_collections/6ad39f4f-2a02-4ac8-aefe-a970965c3106",
+          "triggerLimit": null,
+          "description": "Send TTS (Text-to-speech) voice calls",
+          "name": "Send Voice Message",
+          "tag": "#ClickSend",
+          "recordTags": [
+            "Clicksend",
+            "clicksend"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/055979d8-56ba-4751-8229-34bce360422f",
+          "steps": [
+            {
+              "uuid": "055979d8-56ba-4751-8229-34bce360422f",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "4168212f-c2f5-4491-b0f3-770268ee272b",
+                "title": "ClickSend: Send Voice Message",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "22b4fd08-795c-4522-86d6-aaa066f71ad7",
+              "@type": "WorkflowStep",
+              "name": "Send Voice Message",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "ClickSend",
+                "config": "''",
+                "params": {
+                  "require_input": false,
+                  "machine_detection": false
+                },
+                "version": "2.0.0",
+                "connector": "clicksend",
+                "operation": "send_voice_message",
+                "operationTitle": "Send Voice Message",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "a13395b2-cf6e-4113-b2d7-3c4cac421b30",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Send Voice Message",
+              "sourceStep": "/api/3/workflow_steps/055979d8-56ba-4751-8229-34bce360422f",
+              "targetStep": "/api/3/workflow_steps/22b4fd08-795c-4522-86d6-aaa066f71ad7"
+            }
+          ]
         }
-      ],
-      "uuid": "989fd172-071c-499c-987b-d180df4599e6"
+      ]
     }
   ]
 }
