@@ -19,6 +19,7 @@
         "visible": true,
         "type": "text",
         "name": "url",
+        "description": "Specify the URL of the ClickSend server to which you will connect and perform the automated operations.",
         "value": "https://rest.clicksend.com"
       },
       {
@@ -28,16 +29,16 @@
         "visible": true,
         "type": "text",
         "name": "username",
-        "description": "Username to access ClickSend"
+        "description": "Specify the username to access ClickSend"
       },
       {
-        "title": "Password",
+        "title": "API Key",
         "required": true,
         "editable": true,
         "visible": true,
         "type": "password",
         "name": "password",
-        "description": "Password to access ClickSend"
+        "description": "Specify the API Key to access ClickSend"
       },
       {
         "title": "Verify SSL",
