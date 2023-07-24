@@ -32,7 +32,7 @@
         "description": "Specify the username to access ClickSend"
       },
       {
-        "title": "API Key",
+        "title": "Password",
         "required": true,
         "editable": true,
         "visible": true,
