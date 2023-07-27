@@ -112,13 +112,43 @@
         },
         {
           "title": "To",
-          "name": "to",
-          "type": "text",
-          "visible": true,
+          "required": true,
           "editable": true,
-          "required": false,
-          "tooltip": "Recipient's phone number",
-          "description": "Specify the phone number of recipient."
+          "visible": true,
+          "type": "select",
+          "options": [
+            "Individual",
+            "Group"
+          ],
+          "name": "send_to",
+          "value": "Individual",
+          "description": "Specify whether to send to an individual or a group, by default this is set to individual.",
+          "onchange": {
+            "Individual": [
+              {
+                "title": "Number",
+                "name": "to",
+                "type": "text",
+                "visible": true,
+                "editable": true,
+                "required": true,
+                "tooltip": "Specify the phone number of recipient in E.164 format.",
+                "description": "Specify the phone number of recipient in E.164 format."
+              }
+            ],
+            "Group": [
+              {
+                "title": "List ID",
+                "name": "list_id",
+                "type": "integer",
+                "visible": true,
+                "editable": true,
+                "required": true,
+                "tooltip": "Specify the list ID if sending to a whole list. You can get the list ID from Get Contact List action.",
+                "description": "Specify the list ID if sending to a whole list. You can get the list ID from Get Contact List action."
+              }
+            ]
+          }
         },
         {
           "title": "From",
@@ -159,16 +189,6 @@
           "required": false,
           "tooltip": "Specify ISO alpha-2 character country code e.g. 'US', to format the recipient number if it's not in international format.",
           "description": "Specify ISO alpha-2 character country code e.g. 'US', to format the recipient number if it's not in international format."
-        },
-        {
-          "title": "List ID",
-          "name": "list_id",
-          "type": "integer",
-          "visible": true,
-          "editable": true,
-          "required": false,
-          "tooltip": "Specify the list ID if sending to a whole list. Can be used instead of 'to' you can get the list ID from Get Contact List action.",
-          "description": "Specify the list ID if sending to a whole list. Can be used instead of 'to' you can get the list ID from Get Contact List action.."
         },
         {
           "title": "Email",
@@ -302,13 +322,43 @@
         },
         {
           "title": "To",
-          "name": "to",
-          "type": "text",
-          "visible": true,
+          "required": true,
           "editable": true,
-          "required": false,
-          "tooltip": "Specify the phone number of recipient in E.164 format.",
-          "description": "Specify the phone number of recipient in E.164 format."
+          "visible": true,
+          "type": "select",
+          "options": [
+            "Individual",
+            "Group"
+          ],
+          "name": "send_to",
+          "value": "Individual",
+          "description": "Specify whether to send to an individual or a group, by default this is set to individual.",
+          "onchange": {
+            "Individual": [
+              {
+                "title": "Number",
+                "name": "to",
+                "type": "text",
+                "visible": true,
+                "editable": true,
+                "required": true,
+                "tooltip": "Specify the phone number of recipient in E.164 format.",
+                "description": "Specify the phone number of recipient in E.164 format."
+              }
+            ],
+            "Group": [
+              {
+                "title": "List ID",
+                "name": "list_id",
+                "type": "integer",
+                "visible": true,
+                "editable": true,
+                "required": true,
+                "tooltip": "Specify the list ID if sending to a whole list. You can get the list ID from Get Contact List action.",
+                "description": "Specify the list ID if sending to a whole list. You can get the list ID from Get Contact List action."
+              }
+            ]
+          }
         },
         {
           "title": "Schedule",
@@ -339,16 +389,6 @@
           "required": false,
           "tooltip": "Specify ISO alpha-2 character country code e.g. 'US', to format the recipient number if it's not in international format.",
           "description": "Specify ISO alpha-2 character country code e.g. 'US', to format the recipient number if it's not in international format."
-        },
-        {
-          "title": "List ID",
-          "name": "list_id",
-          "type": "integer",
-          "visible": true,
-          "editable": true,
-          "required": false,
-          "tooltip": "Specify the list ID if sending to a whole list. Can be used instead of 'to' you can get the list ID from Get Contact List action.",
-          "description": "Specify the list ID if sending to a whole list. Can be used instead of 'to' you can get the list ID from Get Contact List action.."
         },
         {
           "title": "Language",
