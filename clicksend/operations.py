@@ -51,6 +51,7 @@ def convert_to_epoch(time):
 
 
 def build_payload(params):
+    params.pop('send_to', '')
     data = {"source": "python"}
     for k, v in params.items():
         if v or v is False:
@@ -65,6 +66,7 @@ def build_payload(params):
 
 def send_message(config, params):
     payload = {"messages": [build_payload(params)]}
+    logger.error('payload is -----> {}'.format(payload))
     endpoint = "/v3/sms/send"
     return make_api_call(method='POST', endpoint=endpoint, data=json.dumps(payload), config=config)
 
@@ -76,7 +78,8 @@ def get_contact_list(config, params):
 
 def send_voice_message(config, params):
     payload = {"messages": [build_payload(params)]}
-    payload['voice'] = payload['voice'].lower()
+    payload['messages'][0]['voice'] = payload['messages'][0]['voice'].lower()
+    logger.error('payload is -----> {}'.format(payload))
     endpoint = "/v3/voice/send"
     return make_api_call(method='POST', endpoint=endpoint, data=json.dumps(payload), config=config)
 
