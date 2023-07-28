@@ -2,10 +2,10 @@
   "type": "workflow_collections",
   "data": [
     {
-      "uuid": "9885de2f-7066-4ba4-af45-71b2743dafcc",
+      "uuid": "523debf5-f6d4-4b60-8e59-c8903ac2cc79",
       "@type": "WorkflowCollection",
       "name": "Sample - ClickSend - 2.0.0",
-      "description": "ClickSend is business communications software enabling companies of all shapes and sizes to easily send and receive SMS, Voice API.",
+      "description": "ClickSend is a cloud-based service that lets you send and receive SMS, Email, Voice, Fax, and Letters worldwide.",
       "visible": true,
       "image": null,
       "recordTags": [
@@ -15,8 +15,8 @@
       "workflows": [
         {
           "@type": "Workflow",
-          "uuid": "98520a07-6388-494d-9fe1-606858513e16",
-          "collection": "/api/3/workflow_collections/9885de2f-7066-4ba4-af45-71b2743dafcc",
+          "uuid": "e25594cd-a2ed-4539-9eb7-00b8bd7e0bab",
+          "collection": "/api/3/workflow_collections/523debf5-f6d4-4b60-8e59-c8903ac2cc79",
           "triggerLimit": null,
           "description": "Send an SMS message to a given number",
           "name": "Send Message",
@@ -30,16 +30,16 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/e95725ab-1361-4e48-9cc6-0b9653bbfb64",
+          "triggerStep": "/api/3/workflow_steps/037bdedd-f87e-48a3-b99f-6c6e11fbdfa2",
           "steps": [
             {
-              "uuid": "e95725ab-1361-4e48-9cc6-0b9653bbfb64",
+              "uuid": "037bdedd-f87e-48a3-b99f-6c6e11fbdfa2",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
               "status": null,
               "arguments": {
-                "route": "0dede89e-8732-4fba-9e73-f886aa81a530",
+                "route": "33c0d997-7f05-458c-a129-759178afb8da",
                 "title": "ClickSend: Send Message",
                 "resources": [
                   "alerts"
@@ -59,7 +59,7 @@
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
             },
             {
-              "uuid": "e2d1b74e-ab05-4546-a0b1-0ab58e23ab39",
+              "uuid": "d452002e-e40f-4087-b66b-da8c8658a05a",
               "@type": "WorkflowStep",
               "name": "Send Message",
               "description": null,
@@ -86,19 +86,19 @@
           "routes": [
             {
               "@type": "WorkflowRoute",
-              "uuid": "edab8f85-ea31-41d2-9167-520e3da5b9f9",
+              "uuid": "4d640baf-47fc-4c17-bfea-1f8ff8334306",
               "label": null,
               "isExecuted": false,
               "name": "Start-> Send Message",
-              "sourceStep": "/api/3/workflow_steps/e95725ab-1361-4e48-9cc6-0b9653bbfb64",
-              "targetStep": "/api/3/workflow_steps/e2d1b74e-ab05-4546-a0b1-0ab58e23ab39"
+              "sourceStep": "/api/3/workflow_steps/037bdedd-f87e-48a3-b99f-6c6e11fbdfa2",
+              "targetStep": "/api/3/workflow_steps/d452002e-e40f-4087-b66b-da8c8658a05a"
             }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "33a9def9-b8e5-44c6-b78a-d4324cdc029f",
-          "collection": "/api/3/workflow_collections/9885de2f-7066-4ba4-af45-71b2743dafcc",
+          "uuid": "874186ce-8df4-4978-b084-0c0284616416",
+          "collection": "/api/3/workflow_collections/523debf5-f6d4-4b60-8e59-c8903ac2cc79",
           "triggerLimit": null,
           "description": "Get all contact lists form your ClickSend Account",
           "name": "Get Contact List",
@@ -112,16 +112,16 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/b2edf398-e8ce-4d90-90f4-122a67e66e10",
+          "triggerStep": "/api/3/workflow_steps/731238a1-08a8-4f6d-9370-6287042198c0",
           "steps": [
             {
-              "uuid": "b2edf398-e8ce-4d90-90f4-122a67e66e10",
+              "uuid": "731238a1-08a8-4f6d-9370-6287042198c0",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
               "status": null,
               "arguments": {
-                "route": "48464b36-606c-4bff-add0-363f50b6d7bf",
+                "route": "660c0a79-5014-4973-a6a4-50ce0defc761",
                 "title": "ClickSend: Get Contact List",
                 "resources": [
                   "alerts"
@@ -141,7 +141,7 @@
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
             },
             {
-              "uuid": "e331604e-da44-462e-8469-e53951bed07a",
+              "uuid": "80675084-cf22-4167-a010-54a6c6cce070",
               "@type": "WorkflowStep",
               "name": "Get Contact List",
               "description": null,
@@ -166,19 +166,19 @@
           "routes": [
             {
               "@type": "WorkflowRoute",
-              "uuid": "d20d29f2-562d-4870-88f1-5791cc33071c",
+              "uuid": "235d3961-3c70-4ea7-b718-bea3e9098b1c",
               "label": null,
               "isExecuted": false,
               "name": "Start-> Get Contact List",
-              "sourceStep": "/api/3/workflow_steps/b2edf398-e8ce-4d90-90f4-122a67e66e10",
-              "targetStep": "/api/3/workflow_steps/e331604e-da44-462e-8469-e53951bed07a"
+              "sourceStep": "/api/3/workflow_steps/731238a1-08a8-4f6d-9370-6287042198c0",
+              "targetStep": "/api/3/workflow_steps/80675084-cf22-4167-a010-54a6c6cce070"
             }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "989d7bfa-ec90-466e-8ba7-06ce7170a4f8",
-          "collection": "/api/3/workflow_collections/9885de2f-7066-4ba4-af45-71b2743dafcc",
+          "uuid": "49e422a5-3a2c-411d-a53d-1b5f9bbdbd86",
+          "collection": "/api/3/workflow_collections/523debf5-f6d4-4b60-8e59-c8903ac2cc79",
           "triggerLimit": null,
           "description": "Send TTS (Text-to-speech) voice calls",
           "name": "Send Voice Message",
@@ -192,16 +192,16 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/5ea5f86c-2f88-4c6a-a039-dd6a57197814",
+          "triggerStep": "/api/3/workflow_steps/0a2d78c8-6b9c-4bd7-84f3-2dc49131047e",
           "steps": [
             {
-              "uuid": "5ea5f86c-2f88-4c6a-a039-dd6a57197814",
+              "uuid": "0a2d78c8-6b9c-4bd7-84f3-2dc49131047e",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
               "status": null,
               "arguments": {
-                "route": "470bed14-00df-415b-aa17-13d7524d4cf2",
+                "route": "2d379c4b-913f-42dc-8ebb-c707fe39b58f",
                 "title": "ClickSend: Send Voice Message",
                 "resources": [
                   "alerts"
@@ -221,7 +221,7 @@
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
             },
             {
-              "uuid": "a0d58030-4f10-4a72-8e39-c7c9a90ade34",
+              "uuid": "63fd7dc5-ae49-4818-b847-1bad9a3891e8",
               "@type": "WorkflowStep",
               "name": "Send Voice Message",
               "description": null,
@@ -250,12 +250,12 @@
           "routes": [
             {
               "@type": "WorkflowRoute",
-              "uuid": "d08d7825-ca1a-45d5-a760-2de6ad519363",
+              "uuid": "c3a77eea-b13a-4577-a672-41e40915055f",
               "label": null,
               "isExecuted": false,
               "name": "Start-> Send Voice Message",
-              "sourceStep": "/api/3/workflow_steps/5ea5f86c-2f88-4c6a-a039-dd6a57197814",
-              "targetStep": "/api/3/workflow_steps/a0d58030-4f10-4a72-8e39-c7c9a90ade34"
+              "sourceStep": "/api/3/workflow_steps/0a2d78c8-6b9c-4bd7-84f3-2dc49131047e",
+              "targetStep": "/api/3/workflow_steps/63fd7dc5-ae49-4818-b847-1bad9a3891e8"
             }
           ]
         }

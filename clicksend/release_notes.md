@@ -3,8 +3,10 @@
 - Added following new parameters in the action `Send Message`
   - Custom String
   - Country
-  - List ID
   - Email
+
+- The `To` parameter in the `Send Message` now has the option to send the message to a single person or to a group of person.
+- The configuration parameter `Password` is changed to `API Key`.
 
 - Added following new operations and respective playbooks
   - Get Contact List
