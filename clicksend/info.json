@@ -1,7 +1,7 @@
 {
   "name": "clicksend",
   "label": "ClickSend",
-  "description": "ClickSend is business communications software enabling companies of all shapes and sizes to easily send and receive SMS, Voice API.",
+  "description": "ClickSend is a cloud-based service that lets you send and receive SMS, Email, Voice, Fax, and Letters worldwide.",
   "publisher": "Fortinet",
   "cs_approved": true,
   "cs_compatible": true,
@@ -32,7 +32,7 @@
         "description": "Specify the username to access ClickSend"
       },
       {
-        "title": "Password",
+        "title": "API Key",
         "required": true,
         "editable": true,
         "visible": true,
@@ -157,8 +157,8 @@
           "visible": true,
           "editable": true,
           "required": false,
-          "tooltip": "Specify the sender ID that shows on the recipients phone when they receive the SMS.",
-          "description": "Specify the sender ID that shows on the recipients phone when they receive the SMS."
+          "tooltip": "Specify the phone number of the sender.",
+          "description": "Specify the phone number of the sender."
         },
         {
           "title": "Schedule",
@@ -271,12 +271,22 @@
           "queued_count": "",
           "messages": [
             {
-              "list_id": "",
-              "message_id": "",
+              "date": "",
               "to": "",
-              "voice": "",
-              "lang": "",
+              "to_type": "",
               "body": "",
+              "from": "",
+              "lang": "",
+              "voice": "",
+              "schedule": "",
+              "message_id": "",
+              "message_parts": "",
+              "message_price": "",
+              "custom_string": "",
+              "user_id": "",
+              "subaccount_id": "",
+              "country": "",
+              "carrier": "",
               "require_input": "",
               "machine_detection": "",
               "status": ""
