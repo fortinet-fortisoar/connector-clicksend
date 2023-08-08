@@ -9,7 +9,7 @@
   "category": "Communication and Coordination",
   "icon_small_name": "ClickSend_32X32.png",
   "icon_large_name": "ClickSend_80X80.png",
-  "help_online": "",
+  "help_online": "https://docs.fortinet.com/document/fortisoar/2.0.0/clicksend/647/clicksend-v2-0-0",
   "configuration": {
     "fields": [
       {
@@ -19,7 +19,7 @@
         "visible": true,
         "type": "text",
         "name": "url",
-        "description": "Specify the URL of the ClickSend server to which you will connect and perform the automated operations.",
+        "description": "Specify the server URL of the ClickSend server.",
         "value": "https://rest.clicksend.com"
       },
       {
@@ -48,7 +48,7 @@
         "type": "checkbox",
         "name": "verify_ssl",
         "value": true,
-        "description": "Specifies whether the SSL certificate for the server is to be verified or not. By default, this option is set as True"
+        "description": "Specifies whether the SSL certificate for the server is to be verified. By default, this option is set to True"
       }
     ]
   },
@@ -122,7 +122,7 @@
           ],
           "name": "send_to",
           "value": "Individual",
-          "description": "Specify whether to send to an individual or a group, by default this is set to individual.",
+          "description": "Select who to send the message, by default this is set to individual.",
           "onchange": {
             "Individual": [
               {
@@ -144,8 +144,8 @@
                 "visible": true,
                 "editable": true,
                 "required": true,
-                "tooltip": "Specify the list ID if sending to a whole list. You can get the list ID from Get Contact List action.",
-                "description": "Specify the list ID if sending to a whole list. You can get the list ID from Get Contact List action."
+                "tooltip": "Specify the list ID of the group to send the message. You can get the list ID from Get Contact List action.",
+                "description": "Specify the list ID of the group to send the message. You can get the list ID from Get Contact List action."
               }
             ]
           }
@@ -177,8 +177,8 @@
           "visible": true,
           "editable": true,
           "required": false,
-          "tooltip": "Specify your reference. It will be passed back with all replies and delivery reports.",
-          "description": "Specify your reference. It will be passed back with all replies and delivery reports."
+          "tooltip": "Specify a string which is sent as part of message details and helps keep messages with the same string, together. It is associated with all replies and delivery reports. ",
+          "description": "Specify a string which is sent as part of message details and helps keep messages with the same string, together. It is associated with all replies and delivery reports. "
         },
         {
           "title": "Country",
@@ -187,8 +187,8 @@
           "visible": true,
           "editable": true,
           "required": false,
-          "tooltip": "Specify ISO alpha-2 character country code e.g. 'US', to format the recipient number if it's not in international format.",
-          "description": "Specify ISO alpha-2 character country code e.g. 'US', to format the recipient number if it's not in international format."
+          "tooltip": "Specify an ISO alpha-2 character country code e.g. 'US', to format the recipient number if it's not in international format.",
+          "description": "Specify an ISO alpha-2 character country code e.g. 'US', to format the recipient number if it's not in international format."
         },
         {
           "title": "Email",
@@ -252,8 +252,8 @@
           "visible": true,
           "editable": true,
           "required": false,
-          "tooltip": "Specify the number of results per page to return. Min 15, Max 100",
-          "description": "Specify the number of results per page to return. Min 15, Max 100"
+          "tooltip": "Specify the number of results per page to return. You can specify a minimum value of 15 and a maximum value of 100. ",
+          "description": "Specify the number of results per page to return. You can specify a minimum value of 15 and a maximum value of 100. "
         }
       ]
     },
@@ -323,8 +323,8 @@
           "visible": true,
           "editable": true,
           "required": true,
-          "tooltip": "Please specify whether you want to use a 'Female' or 'Male' voice to send the voice message.",
-          "description": "Please specify whether you want to use a 'Female' or 'Male' voice to send the voice message.",
+          "tooltip": "Specify whether you want to use a Female or a Male voice to send this voice message. ",
+          "description": "Specify whether you want to use a Female or a Male voice to send this voice message.",
           "options": [
             "Male",
             "Female"
@@ -342,7 +342,7 @@
           ],
           "name": "send_to",
           "value": "Individual",
-          "description": "Specify whether to send to an individual or a group, by default this is set to individual.",
+          "description": "Select who to send the message, by default this is set to individual.",
           "onchange": {
             "Individual": [
               {
@@ -364,8 +364,8 @@
                 "visible": true,
                 "editable": true,
                 "required": true,
-                "tooltip": "Specify the list ID if sending to a whole list. You can get the list ID from Get Contact List action.",
-                "description": "Specify the list ID if sending to a whole list. You can get the list ID from Get Contact List action."
+                "tooltip": "Specify the list ID of the group to send the message. You can get the list ID from Get Contact List action.",
+                "description": "Specify the list ID of the group to send the message. You can get the list ID from Get Contact List action."
               }
             ]
           }
@@ -387,8 +387,8 @@
           "visible": true,
           "editable": true,
           "required": false,
-          "tooltip": "Specify your reference. It will be passed back with all replies and delivery reports.",
-          "description": "Specify your reference. It will be passed back with all replies and delivery reports."
+          "tooltip": "Specify a string which is sent as part of message details and helps keep messages with the same string, together. It is associated with all replies and delivery reports.",
+          "description": "Specify a string which is sent as part of message details and helps keep messages with the same string, together. It is associated with all replies and delivery reports."
         },
         {
           "title": "Country",
@@ -397,8 +397,8 @@
           "visible": true,
           "editable": true,
           "required": false,
-          "tooltip": "Specify ISO alpha-2 character country code e.g. 'US', to format the recipient number if it's not in international format.",
-          "description": "Specify ISO alpha-2 character country code e.g. 'US', to format the recipient number if it's not in international format."
+          "tooltip": "Specify an ISO alpha-2 character country code e.g. 'US', to format the recipient number if it's not in international format.",
+          "description": "Specify an ISO alpha-2 character country code e.g. 'US', to format the recipient number if it's not in international format."
         },
         {
           "title": "Language",
@@ -408,7 +408,7 @@
           "editable": true,
           "required": false,
           "tooltip": "Specify the language for receiving the voice message.",
-          "description": "Specify the language for receiving the voice message. see Allowed Languages table in https://developers.clicksend.com/docs/rest/v3/#Send-Voice-Message"
+          "description": "Specify the language for receiving the voice message. For a a list of allowed languages, check the table at https://developers.clicksend.com/docs/rest/v3/#Send-Voice-Message."
         },
         {
           "title": "Require Input",
